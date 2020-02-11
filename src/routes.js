@@ -1,20 +1,20 @@
-import { Router } from "express";
-import graphqlHTTP from "express-graphql";
+import { Router } from 'express';
+import graphqlHTTP from 'express-graphql';
 
-import schema from "./graphql/shema";
+import schema from './graphql/shema';
 
 const routes = Router();
 
 routes.use(
-  "/graphql",
+  '/graphql',
   graphqlHTTP({
-    schema: schema,
-    graphiql: process.env.NODE_ENV === "development"
-  })
+    schema,
+    graphiql: process.env.NODE_ENV === 'development',
+  }),
 );
 
-routes.use("/hello", (req, res) => {
-  return res.send({ hello: "Helo world" });
+routes.use('/hello', (req, res) => {
+  return res.send({ hello: 'Helo world' });
 });
 
 export default routes;

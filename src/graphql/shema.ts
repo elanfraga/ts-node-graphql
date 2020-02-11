@@ -1,16 +1,16 @@
-import { makeExecutableSchema } from "graphql-tools";
+import { makeExecutableSchema } from 'graphql-tools';
 
 const users: any[] = [
   {
     id: 1,
-    name: "Jon",
-    email: "jon@email.com"
+    name: 'Jon',
+    email: 'jon@email.com',
   },
   {
     id: 2,
-    name: "Dany",
-    email: "Dany@email.com"
-  }
+    name: 'Dany',
+    email: 'Dany@email.com',
+  },
 ];
 
 const typeDefs = `
@@ -31,15 +31,15 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    allUsers: () => users
+    allUsers: () => users,
   },
   Mutation: {
     createUser: (parent, args) => {
-      const newUser = Object.assign({ id: users.length + 1 }, args);
+      const newUser = { id: users.length + 1, ...args };
       users.push(newUser);
       return newUser;
-    }
-  }
+    },
+  },
 };
 
 export default makeExecutableSchema({ typeDefs, resolvers });

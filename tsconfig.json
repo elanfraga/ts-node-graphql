@@ -4,9 +4,18 @@
     "module": "commonjs",
     "allowJs": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "typeRoots": ["node_modules/@types"]
   },
-  "compileOnSave": false,
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
